@@ -2,12 +2,17 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 import { supabase } from '../utils/supabase';
+import Layout from '../components/Layout';
+
+interface Props {
+  lessons: any[];
+}
 
 export default function Home({ lessons }) {
   console.log(lessons);
   console.log(supabase.auth.user());
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <Layout>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
@@ -27,7 +32,7 @@ export default function Home({ lessons }) {
           ))}
         </div>
       </main>
-    </div>
+    </Layout>
   );
 }
 
