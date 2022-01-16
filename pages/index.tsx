@@ -1,14 +1,15 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import { FC } from 'react';
 
 import { supabase } from '../utils/supabase';
 import Layout from '../components/Layout';
 
 interface Props {
-  lessons: any[];
+  lessons?: any[];
 }
 
-export default function Home({ lessons }) {
+const Home: FC<Props> = ({ lessons }) => {
   console.log(lessons);
   console.log(supabase.auth.user());
   return (
@@ -34,10 +35,16 @@ export default function Home({ lessons }) {
       </main>
     </Layout>
   );
-}
+};
+
+type Lesson = {
+  id: string;
+  title?: string;
+  description?: string;
+};
 
 export const getStaticProps = async () => {
-  const { data: lessons } = await supabase.from('lesson').select('*');
+  const { data: lessons } = await supabase.from<Lesson>('lesson').select('*');
   return {
     props: {
       lessons,
