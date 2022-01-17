@@ -3,7 +3,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "random": " node -e \"console.log(crypto.randomBytes(32).toString('hex'))\"",
+    "ngrok": "ngrok http -region=us -hostname=buildonblock.ngrok.io 3000"
   },
   "dependencies": {
     "@chakra-ui/icons": "^1.1.1",
