@@ -1,20 +1,21 @@
 import { supabase } from '../utils/supabase';
 import Head from 'next/head';
+import Layout from '../components/Layout';
+import { Box } from '@chakra-ui/react';
 
 const LessonDetails = ({ lesson }) => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <Layout>
       <Head>
         <title>{lesson.title}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
+      <Box>
         <h1 className="text-6xl font-bold">{lesson.title}</h1>
-
         <p className="mt-3 text-2xl">{lesson.description}</p>
-      </main>
-    </div>
+      </Box>
+    </Layout>
   );
 };
 

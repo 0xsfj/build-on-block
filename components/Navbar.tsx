@@ -16,9 +16,9 @@ export const Template: React.FC = (props) => {
         </Tabs>
       </HStack>
       <Spacer />
-      <HStack display={{ base: 'none', md: 'flex' }} spacing={3}>
+      {/* <HStack display={{ base: 'none', md: 'flex' }} spacing={3}>
         {children.find((child) => child.type === UserProfile)?.props.children}
-      </HStack>
+      </HStack>  */}
 
       <IconButton display={{ base: 'flex', md: 'none' }} size="sm" aria-label="Open menu" fontSize="20px" variant="ghost" onClick={mobileNav.onOpen} icon={<HamburgerIcon />} />
 
