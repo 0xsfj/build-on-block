@@ -17,11 +17,10 @@ export const Nav = () => (
         <NavTabLink>Features</NavTabLink>
         <NavTabLink>Documentation</NavTabLink>
         <NavTabLink>Pricing</NavTabLink>
+        <NavTabLink href="/login">Login</NavTabLink>
+        <NavTabLink href="/logout">Logout</NavTabLink>
       </Navbar.Links>
-      <Navbar.UserProfile>
-        <NavTabLink>Login</NavTabLink>
-        {/* <UserProfile name="Christian Schröter" avatarUrl="https://ca.slack-edge.com/T024F7F15-UJVQ359SP-81fc55875723-512" email="mail@chidori-ui.com" /> */}
-      </Navbar.UserProfile>
+      <Navbar.Links>{/* <UserProfile name="Christian Schröter" avatarUrl="https://ca.slack-edge.com/T024F7F15-UJVQ359SP-81fc55875723-512" email="mail@chidori-ui.com" /> */}</Navbar.Links>
     </Navbar>
   </Box>
 );

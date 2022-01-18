@@ -1,7 +1,8 @@
 import Head from 'next/head';
 import NextLink from 'next/link';
 import { FC } from 'react';
-import { Box, Heading, Text, Link } from '@chakra-ui/react';
+import { Box, Heading, Text, Link, Container } from '@chakra-ui/react';
+import { useUser } from '../contex/user';
 
 import { supabase } from '../utils/supabase';
 import Layout from '../components/Layout';
@@ -11,8 +12,9 @@ interface Props {
 }
 
 const Home: FC<Props> = ({ lessons }) => {
-  console.log(lessons);
-  console.log(supabase.auth.user());
+  const { user } = useUser();
+  console.log('user', user);
+
   return (
     <Layout>
       <Head>
@@ -20,10 +22,12 @@ const Home: FC<Props> = ({ lessons }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Box>
-        <Heading>Build on Block</Heading>
-        <Text>Learn to build crypto projects fast</Text>
-      </Box>
+      <Container maxW="lg">
+        <Box>
+          <Heading>Build on Block</Heading>
+          <Text>Learn to build crypto projects fast</Text>
+        </Box>
+      </Container>
 
       {lessons.map((lesson) => (
         <Box key={lesson.id}>
