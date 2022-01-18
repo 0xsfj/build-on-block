@@ -3,8 +3,9 @@ import { supabase } from '../../utils/supabase';
 
 const handler = async (req, res) => {
   if (!req.body.record.email || !req.body.record.id) {
+    console.log(`Email and Id is required. only returned: ${req.body.record.email ? `Email: ${req.body.record.email}` : ''}${req.body.record.id ? `Id: ${req.body.record.email}` : ''}`);
     res.status(401).send({
-      error: `Email and Id is required only returned: ${req.body.record.email ? `Email: ${req.body.record.email}` : ''}${req.body.record.id ? `Id: ${req.body.record.email}` : ''}`,
+      error: `Email and Id is required only. returned: ${req.body.record.email ? `Email: ${req.body.record.email}` : ''}${req.body.record.id ? `Id: ${req.body.record.email}` : ''}`,
     });
 
     return;
