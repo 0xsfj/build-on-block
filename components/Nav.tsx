@@ -6,7 +6,7 @@ import { NavTabLink } from './NavTabLink';
 // import { UserProfile } from './UserProfile';
 
 export const Nav = () => (
-  <Box minH="24rem" bg={useColorModeValue('gray.50', 'gray.700')}>
+  <Box bg={useColorModeValue('gray.50', 'gray.700')}>
     <Navbar>
       <Navbar.Brand>
         <Center marginEnd={6}>

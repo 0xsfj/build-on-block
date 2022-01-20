@@ -24,7 +24,7 @@ const Home: FC<Props> = ({ lessons }) => {
 
       <Container maxW="lg">
         <Box>
-          <Heading>Build on Block</Heading>
+          <Heading>Start Web3</Heading>
           <Text>Learn to build crypto projects fast</Text>
         </Box>
       </Container>
